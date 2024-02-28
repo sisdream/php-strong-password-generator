@@ -23,3 +23,10 @@ function getRandomString($n)
     return $randomString;
 }
 
+$random_password = getRandomString($user_length);
+
+if ($user_length) {
+    session_start();
+    $_SESSION['random_password'] = $random_password;
+    header('location: password.php');
+}
